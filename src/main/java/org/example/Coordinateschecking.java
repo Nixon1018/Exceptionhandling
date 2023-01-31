@@ -24,7 +24,7 @@ class Point implements Cloneable{
 
 }
 
-public class coordinateschecking {
+public class Coordinateschecking {
     private static final Logger LOGGER = Logger.getLogger("InfoLogging");
 
     public static void main(String[] args) throws CloneNotSupportedException {
