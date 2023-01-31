@@ -17,16 +17,17 @@ class Point implements Cloneable{
         return ( this.x==x && this.y==y)?"true":"false";
 
     }
-    Point(Point p){
-        x=p.x;
-        y=p.y;
+    public Object clone() throws CloneNotSupportedException
+    {
+        return super.clone();
     }
+
 }
 
 public class Coordinateschecking {
     private static final Logger LOGGER = Logger.getLogger("InfoLogging");
 
-    public static void main(String[] args)  {
+    public static void main(String[] args) throws CloneNotSupportedException {
 
         Scanner sc = new Scanner(System.in);
         double p1;
@@ -38,7 +39,7 @@ public class Coordinateschecking {
             LOGGER.info("Enter the first y coordinate:");
             p2 = sc.nextDouble();
             Point pi = new Point(p1, p2);
-            Point pj = new Point(pi);
+            Point pj = (Point) pi.clone();
             LOGGER.info("Enter the Second x coordinate:");
             pj.x = sc.nextDouble();
             LOGGER.info("Enter the Second y coordinate:");
