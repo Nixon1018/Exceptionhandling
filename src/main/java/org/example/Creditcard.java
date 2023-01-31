@@ -32,9 +32,11 @@ class Card implements Cloneable{
         return ( this.cardnumber==cardnumber?"true":"false");
 
     }
-    public Object clone() throws CloneNotSupportedException
+    Card(Card p)
     {
-        return super.clone();
+        holdername=p.holdername;
+        cardnumber=p.cardnumber;
+        expirationdate=p.expirationdate;
     }
 
 }
@@ -57,7 +59,7 @@ public class Creditcard{
             LOGGER.info("Enter the Expiration date:");
             date = sc.next();
             Card c = new Card(name, no, date);
-            Card x = (Card) c.clone();
+            Card x = new Card(c);
             LOGGER.info("Enter the second cardholdername:");
             x.holdername = sc.next();
             LOGGER.info("Enter the second cardnumber:");
