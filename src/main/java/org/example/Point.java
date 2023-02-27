@@ -1,9 +1,5 @@
 package org.example;
-
-import java.util.logging.Logger;
-
 public class Point implements Cloneable{
-    private static final Logger LOGGER=Logger.getLogger("InfoLogging");
     double x;
     double y;
     Point(double p1,double p2){
